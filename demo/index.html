@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>모아 지역 여행 퀘스트</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="map.js" defer></script>
+  <script src="mascot.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span aria-hidden="true">m</span><strong>모아</strong></div>
+    <nav aria-label="주 메뉴">
+      <button type="button" data-tab="explore" aria-current="page">탐험</button>
+      <button type="button" data-tab="history">발자취</button>
+      <button type="button" data-tab="closet">모아의 차고</button>
+    </nav>
+    <p class="mode">초기 데모 · 가상 차량</p>
+  </header>
+
+  <main>
+    <div class="heading">
+      <div><h1>모아 지역 여행 퀘스트</h1><p>처음 방문한 동네를 색칠하고 모아의 의상을 모아 보세요.</p></div>
+      <button type="button" id="reset" class="secondary">데모 초기화</button>
+    </div>
+
+    <div id="interactive">
+      <section id="explore" aria-label="탐험">
+        <div class="layout">
+          <section class="panel map-panel">
+            <div class="panel-heading">
+              <h2>서울 탐험 지도</h2><span id="progress"></span>
+            </div>
+            <svg id="map" viewBox="30 52 760 510" role="group" aria-label="서울 자치구 지도"></svg>
+            <ul class="legend" aria-label="지도 색상">
+              <li><i class="stage-0"></i>미방문</li>
+              <li><i class="stage-1"></i>첫 방문</li>
+              <li><i class="stage-2"></i>일부 완료</li>
+              <li><i class="stage-3"></i>모두 완료</li>
+            </ul>
+          </section>
+
+          <section class="panel district-panel" aria-label="지역 퀘스트">
+            <div class="choices" id="districts" aria-label="시범 지역"></div>
+            <div id="quest-panel"></div>
+          </section>
+        </div>
+      </section>
+      <section id="history" class="panel inner" hidden>
+        <h2>탐험 발자취</h2>
+        <p>가상 방문과 미션 완료 기록이 최신 순서대로 표시됩니다.</p>
+        <ul class="records" id="records"></ul>
+      </section>
+      <section id="closet" class="panel inner" hidden>
+        <h2>모아의 차고</h2>
+        <div class="closet-layout">
+          <div id="mascot"></div>
+          <div><p id="wearing"></p><ul class="records" id="outfits"></ul></div>
+        </div>
+      </section>
+    </div>
+    <section id="moving" class="panel moving" aria-labelledby="moving-title" hidden>
+      <h2 id="moving-title" tabindex="-1">가상 이동 중</h2>
+      <p id="destination"></p>
+      <button type="button" id="park" class="primary">도착 · 가상 주차</button>
+    </section>
+    <p id="status" role="status"></p>
+  </main>
+</body>
+</html>
