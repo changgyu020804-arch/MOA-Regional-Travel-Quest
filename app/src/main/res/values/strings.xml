@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">모아로드 서울</string>
+    <string name="parked_notice">차량을 주차한 뒤 모아로드를 이용해 주세요.</string>
+    <string name="confirm">확인</string>
+</resources>
