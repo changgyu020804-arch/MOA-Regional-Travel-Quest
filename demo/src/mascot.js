@@ -1,4 +1,4 @@
-// 기존 모아 캐릭터 SVG. 현재 착용 의상에 맞춰 색을 표시합니다.
+// 첨부 원본의 자동차 로봇 모아 SVG. 꾸미기 오버레이는 app.js의 drawMascot에서 추가합니다.
 function mascot(large=false){
  const variants={basic:{base:'#3f9df4',dark:'#1c65b7',accent:'#ffc957',symbol:'✦'},coffee:{base:'#c98b65',dark:'#85513d',accent:'#f8e1ba',symbol:'☕'},leaf:{base:'#52b995',dark:'#25866d',accent:'#d8f3b7',symbol:'✿'},art:{base:'#a58af0',dark:'#6652b5',accent:'#ffd5ee',symbol:'★'},water:{base:'#4aaedb',dark:'#22759d',accent:'#a5f1fa',symbol:'≈'},food:{base:'#ef9a63',dark:'#b9653c',accent:'#ffe1a3',symbol:'♥'}};
  const v=variants[mascotWear()]||variants.basic;
